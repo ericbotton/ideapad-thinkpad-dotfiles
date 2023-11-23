@@ -1,0 +1,122 @@
+##
+# color man
+##
+export LESS_TERMCAP_mb=$'\E[01;31m'             # begin blinking
+export LESS_TERMCAP_md=$'\E[01;31m'             # begin bold
+export LESS_TERMCAP_me=$'\E[0m'                 # end mode
+export LESS_TERMCAP_se=$'\E[0m'                 # end standout-mode
+export LESS_TERMCAP_so=$'\E[01;44;33m'          # begin standout-mode - info box
+export LESS_TERMCAP_ue=$'\E[0m'                 # end underline
+export LESS_TERMCAP_us=$'\E[01;32m'             # begin underline
+##
+# Aliases
+##
+alias ls='ls --group-directories-first -v --color=auto'
+alias ll='ls -lhF'
+alias l.='ls -AdF .*'
+alias ll.='ls -AdlhF .*'
+alias lart='ls -lArt'
+alias lsa='/bin/ls -A' 
+alias lsf='/bin/ls -AF'
+alias afile='stat -c "%x" '
+alias mfile='stat -c "%y" '
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias psa='ps -eww -o "%U %p %a" | grep -v "\[.*\]" | grep -v "ps .eww"'
+alias dfh='df --human-readable --all | sort -n -k4'
+alias atree='pstree -alnph'
+alias starwars='telnet towel.blinkenlights.nl'
+alias apt='sudo apt'
+alias apts='sudo apt-cache search'
+alias svim='sudo HOME=/home/edb vim'
+alias dropcaches='sudo echo 3 | sudo tee /proc/sys/vm/drop_caches'
+alias pcat="pygmentize"
+alias prsync='rsync --human-readable --verbose --recursive --partial --progress --times '
+# Functions for makeing life easier
+function countdown(){
+   date1=$((`date +%s` + $1));
+   notify-send "COUNTDOWN" "Timer going for $1 seconds"
+   while [ "$date1" -ge `date +%s` ]; do
+     echo -ne "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
+     sleep 0.1
+   done
+   notify-send "COUNTDOWN" "Time's up!" && mpv --really-quiet ~/repos/pomodoro/ding.mp3
+}
+# easy file sharing from the command line
+function transfer(){
+	curl -s --upload-file ./$1 https://transfer.sh/$1 | xclip -sel clip
+	echo "Upload complete. Link copied to clipboard."	
+}
+function days_until(){
+	echo $(expr '(' $(date -d $1 +%s) - $(date +%s) + 86399 ')' / 86400) " days until deadline"
+}
+# list all files in dir with access time
+function lsatime(){
+# find $1 -type f -printf '%A@ %A+ %p\n' # in UNIX epoch time
+  find $1 -type f -printf '%A+ %p\n'
+}
+# command-not-found (fix)
+if [ -x /usr/lib/command-not-found -o -x /usr/share/command-not-found/command-not-found ]; then
+	function command_not_found_handler {
+	        # check because c-n-f could've been removed in the meantime
+                if [ -x /usr/lib/command-not-found ]; then
+		   /usr/lib/command-not-found -- "$1"
+                   return $?
+                elif [ -x /usr/share/command-not-found/command-not-found ]; then
+		   /usr/share/command-not-found/command-not-found -- "$1"
+                   return $?
+		else
+		   printf "%s: command not found\n" "$1" >&2
+		   return 127
+		fi
+	}
+fi
+fregex () {
+  if [[ $# -eq 1 ]]; then
+    _DIR="."
+    _REGEX="$1"
+  elif [[ $# -eq 2 ]]; then
+    _DIR="$1"
+    _REGEX="$2"
+  fi
+  find "$_DIR" -iregex ".*$_REGEX.*"
+}
+grepinfiles() {
+  find "$1" -type f ! -name "*history" -print 2>/dev/null | xargs grep "$2" 2>/dev/null 
+}
+whatinstalled() {
+  which "$@" | xargs -r readlink -f | xargs -r dpkg -S ;
+}
+# kill -STOP process by command: pstop [regex]
+pstop() {
+  PROC="$1"
+  ps auxww | grep-v "ps auxww" | awk -v PROC="$PROC" '$0 ~ PROC { print $2 }' | xargs kill -STOP
+}
+
+# kill -CONT process by command: pcont [regex]
+pcont() {
+  PROC="$1"
+  ps auxww | awk -v PROC="$PROC" '$0 ~ PROC { print $2 }' | xargs kill -CONT
+}
+# start vnc server that fits on 1366x768 display
+startvnc(){
+  x11vnc -scale 1225x689 -ncache
+}
+randarray() {
+  local _array="$1"
+  echo $randarray[$(( 1 + $RANDOM % ${#_array[@]} ))]
+}
+volume(){
+  pactl set-sink-volume @DEFAULT_SINK@ $1%
+}
+# mountsmb(){
+#   sudo mount -t cifs -o gid=1000,uid=1000 //10.0.0.161/edb /mnt/smb/
+# }
+cowarray=( $(cowsay -l | grep -v Cow\ files\ in) )
+fortune | cowsay -f $cowarray[$(( 1 + $RANDOM % ${#cowarray[@]} ))]
+
+# -----------------------------------------------------------------------------
+# -*- mode: zsh; sh-indentation: 2; indent-tabs-mode: nil; sh-basic-offset: 2; -*-
+# vim: ft=zsh sw=2 ts=2 et
+# -----------------------------------------------------------------------------
