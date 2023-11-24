@@ -1,0 +1,43 @@
+To delete or remove all the firewall rules that are named "bad ip" on your Windows 10, you can use the following steps:
+
+- Open Command Prompt as an administrator. You can do this by typing "cmd" in the search box and right-clicking on the Command Prompt app and choosing "Run as administrator".
+- In the Command Prompt window, type the following command and press Enter:
+
+`netsh advfirewall firewall show rule name="bad ip" | findstr /i "name:"`
+
+This command will list all the firewall rules that have the name "bad ip" and display their names.
+
+- Copy the names of the firewall rules that you want to delete. You can do this by selecting them with your mouse and pressing Ctrl+C.
+- To delete a firewall rule, type the following command and press Enter:
+
+`netsh advfirewall firewall delete rule name="<rule name>"`
+
+Replace `<rule name>` with the name of the firewall rule that you copied. For example, if you want to delete a rule named "bad ip 1", type:
+
+`netsh advfirewall firewall delete rule name="bad ip 1"`
+
+- Repeat this step for each firewall rule that you want to delete. Alternatively, you can use a wildcard character (*) to delete multiple rules at once. For example, if you want to delete all the rules that start with "bad ip", type:
+
+`netsh advfirewall firewall delete rule name="bad ip*"`
+
+- To verify that the firewall rules have been deleted, type the following command and press Enter:
+
+`netsh advfirewall firewall show rule name="bad ip"`
+
+This command will show no results if the firewall rules have been successfully deleted.
+
+I hope this helps you with your question. 😊 If you need more information, you can check out some of these videos¹²³ or web pages⁴⁵ that explain how to manage firewall rules on Windows 10.
+
+### and...
+
+This script will remove most of them; just add the rest if they have similar name. It's not fancy, but it works. The remove-command searches through both in and out firewall lists and removes all that match with the displayname. Run it regularly and it will not use many resources:
+
+    Write-Host '*** Deleting: '
+    remove-netfirewallrule -DisplayName "Your account" 
+    remove-netfirewallrule -DisplayName "Work or school account"
+    remove-netfirewallrule -DisplayName "cortana"
+    remove-netfirewallrule -DisplayName "SmartScreen"
+    remove-netfirewallrule -DisplayName "Windows Default Lock Screen"
+    remove-netfirewallrule -DisplayName "Windows Shell Experience"
+    remove-netfirewallrule -DisplayName "Xbox Game UI"
+    remove-netfirewallrule -DisplayName "Email and accounts"
