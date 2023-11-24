@@ -1,0 +1,31 @@
+\033[91m\033[107m$mod+u          \033[0mborder none                  \033[91m\033[107m$mod+Shift+k    \033[0mmove down                                           
+\033[91m\033[107m$mod+y          \033[0mborder pixel 1               \033[91m\033[107m$mod+Shift+l    \033[0mmove up                                                
+\033[91m\033[107m$mod+n          \033[0mborder normal                \033[91m\033[107m$mod+Shift+;    \033[0mmove right                                    
+\033[91m\033[107m$mod+Return     \033[0mexec terminal                \033[91m\033[107m$mod+Shift+Left \033[0mmove left                                               
+\033[91m\033[107m$mod+Shift+q    \033[0mkill                         \033[91m\033[107m$mod+Shift+Down \033[0mmove down                                        
+\033[91m\033[107m$mod+d          \033[0mexec dmenu_recency           \033[91m\033[107m$mod+Shift+Up   \033[0mmove up                                                   
+\033[91m\033[107m$mod+z          \033[0mexec morc_menu               \033[91m\033[107m$mod+Shift+Right\033[0mmove right                                         
+\033[91m\033[107m$mod+Ctrl+m     \033[0mexec terminal -e 'alsamixer' \033[91m\033[107m$mod+b          \033[0mworkspace back_and_forth                                                        
+\033[91m\033[107m$mod+Ctrl+b     \033[0mexec terminal -e 'bmenu'     \033[91m\033[107m$mod+Shift+b    \033[0mmove container to workspace back_and_forth                             
+\033[91m\033[107m$mod+F2         \033[0mexec palemoon                \033[91m\033[107m$mod+h          \033[0msplit h;exec notify-send 'tile horizontally'                                
+\033[91m\033[107m$mod+F3         \033[0mexec pcmanfm                 \033[91m\033[107m$mod+v          \033[0msplit v;exec notify-send 'tile vertically'                   
+\033[91m\033[107m$mod+Shift+F3   \033[0mexec pcmanfm_pkexec          \033[91m\033[107m$mod+q          \033[0msplit toggle                                                
+\033[91m\033[107m$mod+F5         \033[0mexec terminal -e 'mocp'      \033[91m\033[107m$mod+f          \033[0mfullscreen toggle                                                        
+\033[91m\033[107m$mod+t          \033[0mexec pkill picom             \033[91m\033[107m$mod+s          \033[0mlayout stacking                                                        
+\033[91m\033[107m$mod+Ctrl+t     \033[0mexec picom -b                \033[91m\033[107m$mod+w          \033[0mlayout tabbed                                                  
+\033[91m\033[107m$mod+Shift+d    \033[0mexec "'restart dunst'"       \033[91m\033[107m$mod+e          \033[0mlayout toggle split                                              
+\033[91m\033[107m$mod+Print      \033[0mexec i3-scrot -w             \033[91m\033[107m$mod+Shift+space\033[0mfloating toggle                                                  
+\033[91m\033[107m$mod+Shift+Print\033[0mexec i3-scrot -s             \033[91m\033[107m$mod+space      \033[0mfocus mode_toggle                                              
+\033[91m\033[107m$mod+Shift+h    \033[0mexec xdg-open i3_help.pdf    \033[91m\033[107m$mod+Shift+s    \033[0msticky toggle                                                      
+\033[91m\033[107m$mod+Ctrl+x     \033[0mexec xkill                   \033[91m\033[107m$mod+a          \033[0mfocus parent                                                                  
+\033[91m\033[107m$mod+j          \033[0mfocus left                   \033[91m\033[107m$mod+Shift+minus\033[0mmove scratchpad                                     
+\033[91m\033[107m$mod+k          \033[0mfocus down                   \033[91m\033[107m$mod+minus      \033[0mscratchpad show                                       
+\033[91m\033[107m$mod+l          \033[0mfocus up                     \033[91m\033[107m$mod+[1-8]      \033[0mworkspace \033[91m\033[107m$ws1-8                                      
+\033[91m\033[107m$mod+semicolon  \033[0mfocus right                  \033[91m\033[107m$mod+Ctrl+[1-8] \033[0mmove container to workspace \033[91m\033[107m$ws1-8               
+\033[91m\033[107m$mod+Left       \033[0mfocus left                   \033[91m\033[107m$mod+Shift+[1-8]\033[0mmove container to workspace \033[91m\033[107m$ws1-8                      
+\033[91m\033[107m$mod+Down       \033[0mfocus down                   \033[91m\033[107m$mod+Shift+c    \033[0mreload                                                
+\033[91m\033[107m$mod+Up         \033[0mfocus up                     \033[91m\033[107m$mod+Shift+r    \033[0mrestart                                               
+\033[91m\033[107m$mod+Right      \033[0mfocus right                  \033[91m\033[107m$mod+Shift+e    \033[0mexec "i3-nagbar"                                    
+\033[91m\033[107m$mod+Shift+j    \033[0mmove left                    \033[91m\033[107m$mod+0          \033[0mmode "\033[91m\033[107m$mode_system"                                           
+\033[91m\033[107m$mod+9          \033[0mexec blurlock                \033[91m\033[107m$mod+r          \033[0mmode "resize"                                                 
+\033[91m\033[107m$mod+m          \033[0mbar mode toggle              \033[91m\033[107m$mod+Shift+g    \033[0mmode "\033[91m\033[107m$mode_gaps"                                                             
