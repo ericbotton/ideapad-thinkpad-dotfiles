@@ -1,0 +1,31 @@
+-mod+u          =border none                  -mod+Shift+k    =move down                                           
+-mod+y          =border pixel 1               -mod+Shift+l    =move up                                                
+-mod+n          =border normal                -mod+Shift+;    =move right                                    
+-mod+Return     =exec terminal                -mod+Shift+Left =move left                                               
+-mod+Shift+q    =kill                         -mod+Shift+Down =move down                                        
+-mod+d          =exec dmenu_recency           -mod+Shift+Up   =move up                                                   
+-mod+z          =exec morc_menu               -mod+Shift+Right=move right                                         
+-mod+Ctrl+m     =exec terminal -e 'alsamixer' -mod+b          =workspace back_and_forth                                                        
+-mod+Ctrl+b     =exec terminal -e 'bmenu'     -mod+Shift+b    =move container to workspace back_and_forth                             
+-mod+F2         =exec palemoon                -mod+h          =split h;exec notify-send 'tile horizontally'                                
+-mod+F3         =exec pcmanfm                 -mod+v          =split v;exec notify-send 'tile vertically'                   
+-mod+Shift+F3   =exec pcmanfm_pkexec          -mod+q          =split toggle                                                
+-mod+F5         =exec terminal -e 'mocp'      -mod+f          =fullscreen toggle                                                        
+-mod+t          =exec pkill picom             -mod+s          =layout stacking                                                        
+-mod+Ctrl+t     =exec picom -b                -mod+w          =layout tabbed                                                  
+-mod+Shift+d    =exec "'restart dunst'"       -mod+e          =layout toggle split                                              
+-mod+Print      =exec i3-scrot -w             -mod+Shift+space=floating toggle                                                  
+-mod+Shift+Print=exec i3-scrot -s             -mod+space      =focus mode_toggle                                              
+-mod+Shift+h    =exec xdg-open i3_help.pdf    -mod+Shift+s    =sticky toggle                                                      
+-mod+Ctrl+x     =exec xkill                   -mod+a          =focus parent                                                                  
+-mod+j          =focus left                   -mod+Shift+minus=move scratchpad                                     
+-mod+k          =focus down                   -mod+minus      =scratchpad show                                       
+-mod+l          =focus up                     -mod+[1-8]      =workspace -ws1-8                                      
+-mod+semicolon  =focus right                  -mod+Ctrl+[1-8] =move container to workspace -ws1-8               
+-mod+Left       =focus left                   -mod+Shift+[1-8]=move container to workspace -ws1-8                      
+-mod+Down       =focus down                   -mod+Shift+c    =reload                                                
+-mod+Up         =focus up                     -mod+Shift+r    =restart                                               
+-mod+Right      =focus right                  -mod+Shift+e    =exec "i3-nagbar"                                    
+-mod+Shift+j    =move left                    -mod+0          =mode "-mode_system"                                           
+-mod+9          =exec blurlock                -mod+r          =mode "resize"                                                 
+-mod+m          =bar mode toggle              -mod+Shift+g    =mode "-mode_gaps"                                                             

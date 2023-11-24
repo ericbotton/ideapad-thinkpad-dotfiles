@@ -1,0 +1,55 @@
+conky.config = {
+	alignment = 'bottom_left',
+	background = true,
+	color2 = '5D7B86',
+	cpu_avg_samples = 2,
+	default_color = 'F9FAF9',
+	double_buffer = true,
+        font = 'DroidSansM Nerd Font Mono:size=8',
+	draw_shades = true,
+	gap_x = 25,
+	gap_y = 45,
+	minimum_width = 200,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 2.0,
+	use_xft = true,
+}
+conky.text = [[
+${color}mod+u          ${color2}border none               ${color}mod+Shift+k    ${color2}move down 
+${color}mod+y          ${color2}border pixel 1            ${color}mod+Shift+l    ${color2}move up 
+${color}mod+n          ${color2}border normal             ${color}mod+Shift+;    ${color2}move right 
+${color}mod+Return     ${color2}exec terminal             ${color}mod+Shift+Left ${color2}move left 
+${color}mod+Shift+q    ${color2}kill                      ${color}mod+Shift+Down ${color2}move down 
+${color}mod+d          ${color2}exec dmenu_recency        ${color}mod+Shift+Up   ${color2}move up 
+${color}mod+z          ${color2}exec morc_menu            ${color}mod+Shift+Rt   ${color2}move right 
+${color}mod+Ctrl+m     ${color2}exec 'alsamixer'          ${color}mod+b          ${color2}workspace back_and_forth 
+${color}mod+Ctrl+b     ${color2}exec 'bmenu'              ${color}mod+Shift+b    ${color2}move to workspace back_and_forth 
+${color}mod+F2         ${color2}exec palemoon             ${color}mod+h          ${color2}split h;'tile horizontally' 
+${color}mod+F3         ${color2}exec pcmanfm              ${color}mod+v          ${color2}split v;'tile vertically' 
+${color}mod+Shift+F3   ${color2}exec pcmanfm_pkexec       ${color}mod+q          ${color2}split toggle 
+${color}mod+F5         ${color2}exec 'mocp'               ${color}mod+f          ${color2}fullscreen toggle 
+${color}mod+t          ${color2}exec pkill picom          ${color}mod+s          ${color2}layout stacking 
+${color}mod+Ctrl+t     ${color2}exec picom                ${color}mod+w          ${color2}layout tabbed 
+${color}mod+Shift+d    ${color2}exec "'restart dunst'"    ${color}mod+e          ${color2}layout toggle split 
+${color}mod+PrtSc      ${color2}exec i3-scrot -w          ${color}mod+Shift+spc  ${color2}floating toggle 
+${color}mod+Shift+PrtS ${color2}exec i3-scrot -s          ${color}mod+space      ${color2}focus mode_toggle 
+${color}mod+Shift+h    ${color2}exec xdg-open i3_help.pdf ${color}mod+Shift+s    ${color2}sticky toggle 
+${color}mod+Ctrl+x     ${color2}exec xkill                ${color}mod+a          ${color2}focus parent 
+${color}mod+j          ${color2}focus left                ${color}mod+Shift+-    ${color2}move scratchpad 
+${color}mod+k          ${color2}focus down                ${color}mod+minus      ${color2}scratchpad show 
+${color}mod+l          ${color2}focus up                  ${color}mod+[1-8]      ${color2}workspace 1-8 
+${color}mod+semicolon  ${color2}focus right               ${color}mod+Ctrl+[1-8] ${color2}move to workspace 1-8 
+${color}mod+Left       ${color2}focus left                ${color}mod+Shift+[1-8 ${color2}move to workspace 1-8 & go
+${color}mod+Down       ${color2}focus down                ${color}mod+Shift+c    ${color2}reload 
+${color}mod+Up         ${color2}focus up                  ${color}mod+Shift+r    ${color2}restart 
+${color}mod+Right      ${color2}focus right               ${color}mod+Shift+e    ${color2}exec "i3nagbar" 
+${color}mod+Shift+j    ${color2}move left                 ${color}mod+0          ${color2}mode "$mode_system" 
+${color}mod+9          ${color2}exec blurlock             ${color}mod+r          ${color2}mode "resize" 
+${color}mod+m          ${color2}bar mode toggle           ${color}mod+Shift+g    ${color2}mode "$mode_gaps" 
+
+${color2}help - ${color}mod+Shift+h
+default mod=<Super>
+]]
